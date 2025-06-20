@@ -4,7 +4,7 @@ resource "aws_instance" "private_instance" {
   key_name               = "login"
   instance_type          = "t2.micro"
   vpc_security_group_ids = ["${aws_security_group.security_group_httpd.id}"]
-  user_data              = file("/opt/VPC/vpc-1AZ-LB/user-data.sh")
+  user_data              = file("/opt/VPC/vpc-1AZ-CLB/user-data.sh")
   tags = {
     Name = "Private-Instance"
   }
